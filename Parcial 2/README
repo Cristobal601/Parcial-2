@@ -1,0 +1,65 @@
+modifcar las relaciones 
+modicar el borrado de usarios que no influyan en las publicaciones 
+
+Descripción del proyecto
+Este proyecto consiste en una API RESTful desarrollada con Node.js, Express y Sequelize sobre SQLite, destinada a gestionar usuarios, publicaciones y comentarios. La API es consumida por una SPA desarrollada en React con Vite.
+
+🚀 Instalación y ejecución
+1. Clonar el repositorio
+
+git clone <URL-del-repo>
+cd backend/
+2. Instalar dependencias del backend
+
+npm install
+3. Ejecutar el backend
+
+node src/app.js
+El servidor se levanta en: http://localhost:4000/api
+
+4. Instalar y ejecutar el frontend
+
+cd ../frontend-react/
+npm install
+npm run dev
+La SPA se ejecuta en: http://localhost:5173/
+
+🧪 Endpoints disponibles
+👤 Usuarios
+Método	Endpoint	Descripción
+GET	/api/usuarios	Lista usuarios con filtros
+GET	/api/usuarios/:id	Detalle de usuario
+POST	/api/usuarios	Crear usuario { nombre, correo, ciudad }
+PUT	/api/usuarios/:id	Actualizar usuario parcial
+DELETE	/api/usuarios/:id	Eliminar usuario
+GET	/api/usuarios/:id/publicaciones	Publicaciones del usuario
+
+📝 Publicaciones
+Método	Endpoint	Descripción
+GET	/api/publicaciones	Lista publicaciones con filtros
+GET	/api/publicaciones/:id	Detalle de publicación
+POST	/api/publicaciones	Crear publicación { usuarioId, titulo, cuerpo }
+PUT	/api/publicaciones/:id	Actualizar publicación
+DELETE	/api/publicaciones/:id	Eliminar publicación
+GET	/api/publicaciones/:id/comentarios	Lista comentarios
+POST	/api/publicaciones/:id/comentarios	Crear comentario { nombre, correo, cuerpo }
+
+
+💬 Comentarios
+Método	Endpoint	Descripción
+DELETE	/api/comentarios/:id	Eliminar comentario
+
+⚙️ Decisiones técnicas
+Base de datos SQLite: simple y portable para desarrollo local.
+
+Sequelize: ORM para modelado de entidades y relaciones.
+
+Validaciones: aplicadas en modelos Sequelize (correo único, formato, campos obligatorios).
+
+Middlewares: manejo de errores centralizado y 404 para rutas inexistentes.
+
+SPA con React + Vite: arquitectura modular con ruteo, estados de carga y navegación.
+
+Axios: cliente HTTP configurado en services/api.js.
+
+

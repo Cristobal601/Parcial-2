@@ -1,0 +1,141 @@
+USUARIOS 
+
+http://localhost:4000/api/usuarios
+
+POST
+
+// Usuario 1
+{
+  "nombre": "Ana Torres",
+  "correo": "ana@correo.com",
+  "ciudad": "Córdoba"
+}
+
+// Usuario 2
+{
+  "nombre": "Luis Gómez",
+  "correo": "luis@correo.com",
+  "ciudad": "Rosario"
+}
+
+// Usuario 3
+{
+  "nombre": "María López",
+  "correo": "maria@correo.com",
+  "ciudad": "Mendoza"
+}
+
+PUBLICACIONES 
+
+http://localhost:4000/api/publicaciones
+
+// Ana (id: 1) → 2 publicaciones
+{
+  "usuarioId": 1,
+  "titulo": "Mi primer post",
+  "cuerpo": "Hola mundo desde Córdoba"
+}
+
+{
+  "usuarioId": 1,
+  "titulo": "Segundo post",
+  "cuerpo": "React es genial"
+}
+
+// Luis (id: 2) → 1 publicación
+
+{
+  "usuarioId": 2,
+  "titulo": "Viaje a Rosario",
+  "cuerpo": "La costanera estuvo increíble"
+}
+
+// María (id: 3) → 2 publicaciones
+
+{
+  "usuarioId": 3,
+  "titulo": "Mendoza en otoño",
+  "cuerpo": "Los colores son mágicos"
+}
+
+{
+  "usuarioId": 3,
+  "titulo": "Vino y montaña",
+  "cuerpo": "Una combinación perfecta"
+}
+
+
+COMENTARIOS 
+
+http://localhost:4000/api/publicaciones/:id/comenterios
+
+// Publicación 1 (Ana)
+POST /api/publicaciones/1/comentarios
+{
+  "nombre": "Carlos",
+  "correo": "carlos@correo.com",
+  "cuerpo": "¡Bienvenida Ana!"
+}
+POST /api/publicaciones/1/comentarios
+{
+  "nombre": "Lucía",
+  "correo": "lucia@correo.com",
+  "cuerpo": "Me encantó tu post"
+}
+
+// Publicación 2 (Ana)
+POST /api/publicaciones/2/comentarios
+{
+  "nombre": "Pedro",
+  "correo": "pedro@correo.com",
+  "cuerpo": "React es lo mejor"
+}
+POST /api/publicaciones/2/comentarios
+{
+  "nombre": "Sofía",
+  "correo": "sofia@correo.com",
+  "cuerpo": "¿Usás Vite o CRA?"
+}
+
+// Publicación 3 (Luis)
+POST /api/publicaciones/3/comentarios
+{
+  "nombre": "Martín",
+  "correo": "martin@correo.com",
+  "cuerpo": "Rosario es hermosa"
+}
+POST /api/publicaciones/3/comentarios
+{
+  "nombre": "Valeria",
+  "correo": "valeria@correo.com",
+  "cuerpo": "¿Visitaste el monumento?"
+}
+
+// Publicación 4 (María)
+POST /api/publicaciones/4/comentarios
+{
+  "nombre": "Esteban",
+  "correo": "esteban@correo.com",
+  "cuerpo": "Me encanta Mendoza en otoño"
+}
+POST /api/publicaciones/4/comentarios
+{
+  "nombre": "Paula",
+  "correo": "paula@correo.com",
+  "cuerpo": "¡Subí fotos!"
+}
+
+// Publicación 5 (María)
+POST /api/publicaciones/5/comentarios
+{
+  "nombre": "Diego",
+  "correo": "diego@correo.com",
+  "cuerpo": "¿Probaste Malbec?"
+}
+
+POST /api/publicaciones/5/comentarios
+{
+  "nombre": "Natalia",
+  "correo": "natalia@correo.com",
+  "cuerpo": "Qué buena combinación"
+}
